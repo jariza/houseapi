@@ -1,0 +1,19 @@
+Simple ROS node that exposes ROS topics created by netatmo2ros (https://github.com/jariza/netatmo2ros) in an API REST.
+The only availalbe URL is <hostname>:5000/weather
+
+== USAGE ==
+rosrun houseapi main.py
+
+== DOCKER CONTAINER ==
+How to build:
+  Docker container can be build using the files included in this repo:
+  
+  e.g.: docker build -t houseapi:<tagnumber> .
+
+How to run:
+  The URI of the ROS core is specified in the environment variable ROS_MASTER_URI, the default value is http://roscore-server:11311/.
+  
+  e.g. (default roscore): docker run -d --link roscore-server houseapi:<tagnumber>
+  e.g. (non-default roscore): docker run -d --link roscore-server -e "ROS_MASTER_URI=http://hostname:port/" houseapi:<tagnumber>
+  
+  
