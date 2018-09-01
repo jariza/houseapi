@@ -8,7 +8,7 @@ RUN pip install flask rospy_message_converter
 # Create workspace and copy required files
 RUN mkdir -p /home/catkin_ws/src/
 WORKDIR /home/catkin_ws
-COPY . /home/catkin_ws/src/
+COPY . /home/catkin_ws/src/houseapi/
 
 # Get msg dependencies
 RUN git clone https://github.com/jariza/netatmo2ros.git ./src/netatmo2ros
